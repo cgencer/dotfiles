@@ -1,0 +1,11 @@
+alias ..="cd .."
+alias cd..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+
+alias g="git"
+alias subl="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
+alias sublime"/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
+alias flushdns="dscacheutil -flushcache && echo \"DNS cache cleared\""
+alias sassw="sass --style compressed --watch *.scss"
