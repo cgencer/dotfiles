@@ -12,7 +12,7 @@ ZSH_THEME="jenssegers"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # Load aliases
-source .aliases
+[ -f ~/.aliases ] && source .aliases
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -51,4 +51,4 @@ source $ZSH/oh-my-zsh.sh
 export PATH=$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin
 
 # Load path
-source .path
+[ -f ~/.path ] && source .path
