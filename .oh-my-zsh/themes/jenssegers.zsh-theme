@@ -1,3 +1,10 @@
+#--------------------------------------------------------------------------------------------
+# Flat theme for oh-my-zsh by Jens Segers (jenssegers.be)
+# Intended to be used with Solarized (ethanschoonover.com/solarized)
+# Based on Andrew Burgess' article on Nettuts+
+#  -> http://net.tutsplus.com/tutorials/tools-and-tips/how-to-customize-your-command-prompt/
+#--------------------------------------------------------------------------------------------
+
 function get_pwd() {
     print -D $PWD
 }
