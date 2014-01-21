@@ -5,6 +5,7 @@ alias ....="cd ../../.."
 alias .....="cd ../../../.."
 
 alias g="git"
+alias gs="git status"
 alias subl="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
 alias sublime"/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
 alias flushdns="dscacheutil -flushcache && echo \"DNS cache cleared\""
@@ -13,4 +14,4 @@ alias airport="/System/Library/PrivateFrameworks/Apple80211.framework/Versions/C
 
 alias such=git
 alias very=git
-alias wow='git status'
+alias wow="git status"
