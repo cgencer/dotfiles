@@ -10,3 +10,7 @@ alias sublime"/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
 alias flushdns="dscacheutil -flushcache && echo \"DNS cache cleared\""
 alias sassw="sass --style compressed --watch *.scss"
 alias airport="/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport"
+
+alias such=git
+alias very=git
+alias wow='git status'
