@@ -1,0 +1,2 @@
+# Change Vagrant working directory
+export VAGRANT_CWD="$HOME/Homestead/"

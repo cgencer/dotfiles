@@ -14,6 +14,9 @@ ZSH_THEME="jenssegers"
 # Load aliases
 [ -f ~/.aliases ] && source .aliases
 
+# Load exports
+[ -f ~/.exports ] && source .exports
+
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
 
