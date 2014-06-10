@@ -11,12 +11,6 @@ ZSH_THEME="jenssegers"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# Load aliases
-[ -f ~/.aliases ] && source .aliases
-
-# Load exports
-[ -f ~/.exports ] && source .exports
-
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
 
@@ -53,5 +47,8 @@ source $ZSH/oh-my-zsh.sh
 # Customize to your needs...
 export PATH=$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin
 
-# Load path
-[ -f ~/.path ] && source .path
+# Load dotfiles
+for file in ~/.{path,exports,aliases,functions,extra}; do
+    [ -r "$file" ] && [ -f "$file" ] && source "$file";
+done;
+unset file;
