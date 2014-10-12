@@ -11,12 +11,6 @@ ZSH_THEME="jenssegers"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# Load aliases
-[ -f ~/.aliases ] && source .aliases
-
-# Load exports
-[ -f ~/.exports ] && source .exports
-
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
 
@@ -46,12 +40,15 @@ ZSH_THEME="jenssegers"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git)
+plugins=(git laravel4)
 
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 export PATH=$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin
 
-# Load path
-[ -f ~/.path ] && source .path
+# Load dotfiles
+for file in ~/.{path,exports,aliases,functions,extra}; do
+    [ -r "$file" ] && [ -f "$file" ] && source "$file";
+done;
+unset file;
