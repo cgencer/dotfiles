@@ -8,6 +8,7 @@ alias .....="cd ../../../.."
 # Shortcuts
 alias g="git"
 alias gs="git status"
+alias commit="git add -A; git commit -am"
 alias subl="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
 alias sublime"/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
 alias homestead='vagrant'
