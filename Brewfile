@@ -1,7 +1,7 @@
 # Make sure we’re using the latest Homebrew
 update
 
-# Upgrade any already-installed formulae
+# Upgrade any already-installed formula
 upgrade
 
 # Install tools
@@ -12,6 +12,9 @@ install ruby
 install curl
 install mcrypt
 install autoconf
+install node
+install php55
+install php55-mcrypt
 
 # Remove outdated versions from the cellar
 cleanup
