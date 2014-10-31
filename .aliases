@@ -12,6 +12,7 @@ alias commit="git add -A; git commit -am"
 alias subl="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
 alias sublime="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
 alias finder="open ."
+alias pip="pip3"
 
 # Network stuff
 alias airport="/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport"

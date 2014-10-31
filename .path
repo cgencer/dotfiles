@@ -1,2 +1,2 @@
 # Composer bin
-export PATH=$PATH:~/.composer/vendor/bin/
+export PATH=$PATH:~/.composer/vendor/bin
