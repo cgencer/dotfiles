@@ -4,8 +4,8 @@
 	s = status
 	d = diff --color --color-words --abbrev
 	l = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
-	u = pull
-	up = pull
+	u = pull --rebase
+	up = pull --rebase
 	tags = tag -l
 	branches = branch -a
 	remotes = remote -v
