@@ -7,19 +7,24 @@ alias .....="cd ../../../.."
 
 # Shortcuts
 alias g="git"
-alias gs="git status"
 alias commit="git add -A; git commit -am"
 alias subl="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
 alias sublime="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
 alias finder="open ."
+alias python3="python3 -u"
+alias fuck='eval $(thefuck $(fc -ln -1))'
+alias vagrant-fix="rm .vagrant/machines/default/virtualbox/synced_folders; vagrant reload --provision"
+
+# PHP stuff
+alias serve="php -S localhost:3000"
 alias art="php artisan"
+alias behat="behat --stop-on-failure"
+alias xphp="XDEBUG_CONFIG='idekey=PHPSTORM' php"
+alias lockfix="rm composer.lock && composer update --ignore-platform-reqs && git add composer.lock && git rebase --continue"
 
 # Network stuff
 alias airport="/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport"
 alias flushdns="dscacheutil -flushcache && echo \"DNS cache cleared\""
-
-# Composer with HHVM
-#alias composer="hhvm -v ResourceLimit.SocketDefaultTimeout=30 -v Http.SlowQueryThreshold=30000 /bin/composer"
 
 # OS X has no `md5sum`, so use `md5` as a fallback
 command -v md5sum > /dev/null || alias md5sum="md5"
@@ -29,3 +34,13 @@ command -v sha1sum > /dev/null || alias sha1sum="shasum"
 
 # Recursively delete `.DS_Store` files
 alias dotclean="find . -type f -name '*.DS_Store' -ls -delete"
+
+# Generate a random string
+random() {
+	cat /dev/urandom | env LC_CTYPE=C tr -dc 'a-zA-Z0-9' | fold -w ${1:-32} | head -n 1
+}
+
+# Get string length of first argument
+strlen() {
+	echo ${#1}
+}

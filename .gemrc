@@ -1,1 +1,2 @@
 gem: --no-rdoc --no-ri
+gemhome: ~/.gem/ruby/2.2.0
