@@ -6,7 +6,8 @@
 	"file_exclude_patterns":
 	[
 		"*.scssc",
-		"*.DS_Store"
+		"*.DS_Store",
+		"*.pyc"
 	],
 	"folder_exclude_patterns":
 	[
@@ -14,17 +15,16 @@
 		".git",
 		"node_modules",
 		"bower_components",
-		".idea"
+		".idea",
+		"__pycache__"
 	],
+	"font_face": "Hack",
 	"font_size": 14,
 	"highlight_line": true,
 	"highlight_modified_tabs": true,
-	"ignored_packages":
-	[
-		"Vintage"
-	],
-	"line_padding_bottom": 5,
-	"line_padding_top": 5,
+	"line_padding_bottom": 4,
+	"line_padding_top": 4,
+	"show_panel_on_build": false,
 	"spacegray_sidebar_font_large": true,
 	"spacegray_sidebar_tree_large": true,
 	"spacegray_tabs_large": true,

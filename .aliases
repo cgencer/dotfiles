@@ -7,13 +7,16 @@ alias .....="cd ../../../.."
 
 # Shortcuts
 alias g="git"
-alias commit="git add -A; git commit -am"
+alias commit='git add $(git ls-files -o --exclude-standard) && git add -p && git commit -m'
 alias subl="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
 alias sublime="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
 alias finder="open ."
 alias python3="python3 -u"
-alias fuck='eval $(thefuck $(fc -ln -1))'
-alias vagrant-fix="rm .vagrant/machines/default/virtualbox/synced_folders; vagrant reload --provision"
+alias cu="composer update --ignore-platform-reqs --prefer-dist"
+alias ci="composer install --ignore-platform-reqs --prefer-dist"
+alias c="composer"
+alias diff="diff -U3"
+alias java="/Library/Internet\ Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/bin/java"
 
 # PHP stuff
 alias serve="php -S localhost:3000"
