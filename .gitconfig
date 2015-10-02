@@ -2,6 +2,7 @@
 	c = commit -am
 	p = push
 	s = status
+	a = add -p
 	d = diff --color --color-words --abbrev
 	l = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
 	u = pull --rebase
