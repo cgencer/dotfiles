@@ -40,7 +40,7 @@ alias dotclean="find . -type f -name '*.DS_Store' -ls -delete"
 
 # Generate a random string
 random() {
-	cat /dev/urandom | env LC_CTYPE=C tr -dc 'a-zA-Z0-9' | fold -w ${1:-32} | head -n 1
+	openssl rand -base64 512 | tr -dc 'a-zA-Z0-9' | fold -w ${1:-32} | head -n 1
 }
 
 # Get string length of first argument
