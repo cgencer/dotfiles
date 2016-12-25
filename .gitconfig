@@ -3,10 +3,13 @@
 	p = push
 	s = status
 	a = add -p
+	f = fetch --all
 	d = diff --color --color-words --abbrev
 	l = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
+	me = log --author="Jens" --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
 	u = pull --rebase
 	up = pull --rebase
+	cp = cherry-pick
 	pop = stash pop
 	unstash = stash pop
 	tags = tag -l

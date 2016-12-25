@@ -12,3 +12,7 @@ Thumbs.db
 
 # Cache directories
 .sass-cache
+
+# Custom test files
+/test.php
+/.idea
