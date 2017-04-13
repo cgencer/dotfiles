@@ -15,6 +15,7 @@ tap 'caskroom/fonts'
 brew 'homebrew/dupes/nano'
 brew 'homebrew/dupes/grep'
 brew 'homebrew/dupes/screen'
+brew 'homebrew/dupes/less'
 
 # Install tools
 brew 'mas'
