@@ -10,9 +10,10 @@ Thumbs.db
 .Spotlight-V100
 .Trashes
 
-# Cache directories
+# Cache files and directories
 .sass-cache
+.php_cs.cache
 
-# Custom test files
-/test.php
+# Editor files
 /.idea
+.idea

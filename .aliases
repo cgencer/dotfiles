@@ -10,37 +10,63 @@ alias g="git"
 alias commit='git add $(git ls-files -o --exclude-standard) && git add -p && git commit -m'
 alias subl="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
 alias sublime="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
+alias storm="open -a /Applications/PhpStorm.app"
+alias code="/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code"
 alias finder="open ."
-alias python3="python3 -u"
-alias diff="diff -U3"
+alias diff="colordiff"
 alias hosts="subl /etc/hosts"
 alias aliases="subl ~/.aliases"
-
-# PHP stuff
-alias serve="php -S localhost:3000"
-alias art="php artisan"
-alias behat="behat --stop-on-failure"
-alias x="XDEBUG_CONFIG='idekey=PHPSTORM'"
-alias debug="XDEBUG_CONFIG='idekey=PHPSTORM'"
-alias xphp="XDEBUG_CONFIG='idekey=PHPSTORM' php"
-alias lockfix="rm composer.lock && composer update --ignore-platform-reqs && git add composer.lock && git rebase --continue"
-alias climb="composer outdated --outdated --direct"
-alias storm="open -a /Applications/PhpStorm.app"
-alias cu="composer update"
-alias ci="composer install"
-alias c="composer"
-alias psr2="php-cs-fixer fix . --diff --config=/Users/Jens/.php_cs"
-
-# Network stuff
+alias cap="captain"
+alias tree="tree -C"
 alias airport="/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport"
 alias flushdns="dscacheutil -flushcache && echo \"DNS cache cleared\""
+alias d="docker"
+alias dc="docker-compose"
+alias c="composer"
+alias docker-composer="docker-compose"
 
-# Docker stuff
-alias docker-up="cd ~/Docker/Personal && docker-compose build && docker-compose up --remove-orphans -d"
-alias docker-clean="docker images -q -a | xargs docker rmi"
-docker-ssh() {
-	docker exec -i -t $1 /bin/bash
+# PHP stuff
+alias ci="composer install --ignore-platform-reqs"
+alias cu="composer update --ignore-platform-reqs"
+alias cr="composer update --ignore-platform-reqs"
+alias serve="PORT=3000 php -S 0.0.0.0:3000"
+alias art="php artisan"
+alias climb="composer outdated --outdated --direct"
+
+# Docker run with bound current directory
+function docker_run() {
+	if [ -z "$PORT" ]; then
+		docker run -it --init --rm \
+			-v $(pwd):/directory \
+			-w /directory \
+			--network bridge \
+			--network tlnetwork \
+			${@}
+	else
+		echo "Binding localhost:$PORT to container";
+		docker run -it --init --rm \
+			-v $(pwd):/directory \
+			-w /directory \
+			-p ${PORT}:${PORT} \
+			--network bridge \
+			--network tlnetwork \
+			${@}
+	fi
 }
+
+# Docker aliases
+alias composer="docker_run -v ~/.composer:/root/.composer jenssegers/php:cli composer"
+alias php="docker_run jenssegers/php:cli php"
+alias php5="docker_run php:5-alpine php"
+alias node="docker_run node:slim node"
+alias npm="docker_run node:slim npm"
+alias ruby="docker_run -v ~/.gem:/root/.gem ruby:slim ruby"
+alias gem="docker_run -v ~/.gem:/root/.gem ruby:slim gem"
+alias blackfire="docker_run -e BLACKFIRE_CLIENT_ID -e BLACKFIRE_CLIENT_TOKEN blackfire/blackfire blackfire"
+alias php-cs-fixer="docker_run ekreative/php-cs-fixer php-cs-fixer"
+
+# Generate a random uuid
+alias uuid="uuidgen | tr '[:upper:]' '[:lower:]' | tr -d '\n' | pbcopy && pbpaste && echo"
 
 # OS X has no `md5sum`, so use `md5` as a fallback
 command -v md5sum > /dev/null || alias md5sum="md5"
@@ -81,11 +107,14 @@ transfer() {
 	rm -f $tmpfile;
 }
 
-# Prefer vendor phpunit
-phpunit() {
-	if  [ -e './vendor/bin/phpunit' ]; then
-		./vendor/bin/phpunit
-	else
-		~/.composer/vendor/bin/phpunit
-	fi
+# Get dns records for a host
+function dnsrecords() {
+	dig +nocmd $1 A +multiline +noall +answer;
+	dig +nocmd $1 AAAA +multiline +noall +answer;
+	dig +nocmd $1 NS +multiline +noall +answer;
+	dig +nocmd $1 SOA +multiline +noall +answer;
+	dig +nocmd $1 MX +multiline +noall +answer;
+	dig +nocmd $1 TXT +multiline +noall +answer;
+	dig +nocmd $1 DNSKEY +multiline +noall +answer;
+	dig +nocmd $1 CAA +multiline +noall +answer;
 }

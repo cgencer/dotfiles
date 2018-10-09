@@ -1,2 +1,0 @@
-export PATH=$PATH:~/.composer/vendor/bin
-export PATH="/usr/local/sbin:$PATH"

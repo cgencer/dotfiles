@@ -1,5 +1,5 @@
 [alias]
-	c = commit -am
+	c = commit
 	p = push
 	s = status
 	a = add -p
@@ -16,9 +16,12 @@
 	branches = branch -a
 	remotes = remote -v
 	contributors = shortlog --summary --numbered
+	amend = commit --amend
+	cleanup = fetch -p
 [color]
 	ui = always
 [core]
 	excludesfile = ~/.gitignore
+	editor = nano
 [push]
 	default = simple
