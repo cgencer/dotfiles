@@ -24,4 +24,4 @@
 	excludesfile = ~/.gitignore
 	editor = nano
 [push]
-	default = simple
+	default = current
