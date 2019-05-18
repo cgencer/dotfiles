@@ -25,20 +25,20 @@ brew 'less'
 #brew 'iperf'
 #brew 'ipcalc'
 #brew 'dhcpdump'
-brew 'mtr'
+#brew 'mtr'
 brew 'nmap'
 brew 'csshx'
 brew 'curl'
 brew 'zsh'
 brew 'zsh-completions'
 brew 'zsh-autosuggestions'
-brew 'python'
-brew 'python3'
 brew 'ansible'
-brew 'colordiff'
+brew 'antigen'
+brew 'docker-clean'
+brew 'ctop'
+brew 'prettyping'
 
 # Applications
-cask '1password'
 cask 'dropbox'
 cask 'firefox'
 cask 'cleanmymac'
@@ -54,13 +54,11 @@ cask 'cakebrew'
 cask 'little-snitch'
 cask 'viscosity'
 cask 'sonos'
-cask 'macs-fan-control'
+#cask 'macs-fan-control'
 cask 'istumbler'
 cask 'insomnia'
 cask 'robomongo'
-cask 'messenger'
 cask 'kitematic'
-cask 'notion'
 
 # Fonts
 cask 'font-inconsolata'
@@ -80,7 +78,7 @@ cask 'font-nexa'
 cask 'font-montserrat'
 
 # App store
-mas 412529613 # Cinch
+#mas 412529613 # Cinch
 mas 425424353 # Unarchiver
 mas 948176063 # Boom
 mas 803453959 # Slack
@@ -89,6 +87,11 @@ mas 409201541 # Pages
 mas 409183694 # Keynote
 mas 1107421413 # 1Blocker
 mas 1020812363 # Copyclip
+mas 981117463 # Chatty
+mas 972028355 # Microsnitch
+mas 1333542190 # 1password
+mas 585829637 # Todoist
+mas 441258766 # Magnet
 
 # Remove outdated versions from the cellar
 cleanup
