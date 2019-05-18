@@ -15,6 +15,7 @@ alias finder="open ."
 alias diff="colordiff"
 alias hosts="code /etc/hosts"
 alias aliases="code ~/.aliases"
+alias vim="code"
 alias cap="captain"
 alias tree="tree -C"
 alias airport="/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport"
@@ -22,12 +23,12 @@ alias flushdns="dscacheutil -flushcache && echo \"DNS cache cleared\""
 alias d="docker"
 alias dc="docker-compose"
 alias c="composer"
-alias docker-composer="docker-compose"
+alias ping="prettyping --nolegend"
 
 # PHP stuff
 alias ci="composer install --ignore-platform-reqs"
 alias cu="composer update --ignore-platform-reqs"
-alias cr="composer update --ignore-platform-reqs"
+alias cr="composer require --ignore-platform-reqs"
 alias serve="PORT=3000 php -S 0.0.0.0:3000"
 alias art="php artisan"
 alias climb="composer outdated --outdated --direct"
@@ -38,7 +39,6 @@ function docker_run() {
 		docker run -it --init --rm \
 			-v $(pwd):/directory \
 			-w /directory \
-			--network bridge \
 			--network tlnetwork \
 			${@}
 	else
@@ -47,19 +47,16 @@ function docker_run() {
 			-v $(pwd):/directory \
 			-w /directory \
 			-p ${PORT}:${PORT} \
-			--network bridge \
 			--network tlnetwork \
 			${@}
 	fi
 }
 
 # Docker aliases
-alias composer="docker_run -v ~/.composer:/root/.composer jenssegers/php:cli composer"
+alias composer="docker_run -v ~/.composer:/root/.composer -v ~/.ssh:/root/.ssh jenssegers/php:cli composer"
 alias php="docker_run jenssegers/php:cli php"
 alias php5="docker_run php:5-alpine php"
 alias php70="docker_run php:7.0-alpine php"
-alias node="docker_run node:slim node"
-alias npm="docker_run node:slim npm"
 alias ruby="docker_run -v ~/.gem:/root/.gem ruby:slim ruby"
 alias gem="docker_run -v ~/.gem:/root/.gem ruby:slim gem"
 alias blackfire="docker_run -e BLACKFIRE_CLIENT_ID -e BLACKFIRE_CLIENT_TOKEN blackfire/blackfire blackfire"
@@ -117,4 +114,12 @@ function dnsrecords() {
 	dig +nocmd $1 TXT +multiline +noall +answer;
 	dig +nocmd $1 DNSKEY +multiline +noall +answer;
 	dig +nocmd $1 CAA +multiline +noall +answer;
+}
+
+timestamp() {
+	if [ $# -eq 0 ]; then
+		date +%s | pbcopy && pbpaste && echo
+	else
+		date -r $1
+	fi
 }
