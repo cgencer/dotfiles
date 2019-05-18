@@ -4,12 +4,16 @@
 	s = status
 	a = add -p
 	f = fetch --all
-	d = diff --color --color-words --abbrev
+	d = diff --color --minimal
 	l = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
 	me = log --author="Jens" --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
 	u = pull --rebase
 	up = pull --rebase
 	cp = cherry-pick
+	co = checkout
+	ch = checkout
+	check = checkout
+	switch = checkout
 	pop = stash pop
 	unstash = stash pop
 	tags = tag -l
@@ -18,10 +22,15 @@
 	contributors = shortlog --summary --numbered
 	amend = commit --amend
 	cleanup = fetch -p
-[color]
-	ui = always
 [core]
 	excludesfile = ~/.gitignore
 	editor = nano
 [push]
-	default = current
+	default = simple
+[diff]
+	mnemonicprefix = false
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true

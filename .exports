@@ -7,3 +7,6 @@ export EDITOR="nano";
 
 # GPG
 export GPG_TTY=$(tty);
+
+# Lazy load nvm
+export NVM_LAZY_LOAD=true
