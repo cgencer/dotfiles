@@ -8,5 +8,10 @@ export EDITOR="nano";
 # GPG
 export GPG_TTY=$(tty);
 
-# Lazy load nvm
+# NVM settings
+export NVM_DIR="$HOME/.nvm"
 export NVM_LAZY_LOAD=true
+
+# Captain settings
+export CAPTAIN_DEPTH=3
+export CAPTAIN_ROOT=~/Projects

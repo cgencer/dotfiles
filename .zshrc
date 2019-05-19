@@ -1,23 +1,17 @@
 export PATH=$HOME/bin:/usr/local/bin:./bin:$PATH
+
 export ZSH=$HOME/.oh-my-zsh
-
 source $ZSH/oh-my-zsh.sh
-source /usr/local/share/antigen/antigen.ZSH
 
-antigen use oh-my-zsh
+export ZPLUG_HOME=/usr/local/opt/zplug
+source $ZPLUG_HOME/init.zsh
 
-antigen bundle zsh-autosuggestions
-antigen bundle git
-antigen bundle docker
-antigen bundle fasd
-antigen bundle lukechilds/zsh-nvm
-
-antigen theme jenssegers/zsh jenssegers
-
-antigen apply
-
-# Load dotfiles
-for file in ~/.{path,exports,aliases,functions,extra}; do
-    [ -r "$file" ] && [ -f "$file" ] && source "$file";
-done;
-unset file;
+zplug "~/.dotfiles", from:local
+zplug "zplug/zplug", hook-build:"zplug --self-manage"
+zplug "zsh-users/zsh-completions", defer:2
+zplug "zsh-users/zsh-autosuggestions", defer:2
+zplug "plugins/git", from:oh-my-zsh
+zplug "plugins/docker", from:oh-my-zsh
+zplug "plugins/fasd", from:oh-my-zsh
+zplug "jenssegers/zsh", as:theme
+zplug load
