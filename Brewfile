@@ -58,7 +58,9 @@ cask 'sonos'
 cask 'istumbler'
 cask 'insomnia'
 cask 'robomongo'
+cask 'docker'
 cask 'kitematic'
+cask 'alfred'
 
 # Fonts
 cask 'font-inconsolata'
@@ -89,9 +91,10 @@ mas 1107421413 # 1Blocker
 mas 1020812363 # Copyclip
 mas 981117463 # Chatty
 mas 972028355 # Microsnitch
-mas 1333542190 # 1password
+mas 1333542190 # 1Password
 mas 585829637 # Todoist
 mas 441258766 # Magnet
+mas 1147396723 # Whatsapp
 
 # Remove outdated versions from the cellar
 cleanup
