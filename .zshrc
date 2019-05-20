@@ -10,6 +10,7 @@ zplug "~/.dotfiles", from:local
 zplug "zplug/zplug", hook-build:"zplug --self-manage"
 zplug "zsh-users/zsh-completions", defer:2
 zplug "zsh-users/zsh-autosuggestions", defer:2
+zplug "lukechilds/zsh-nvm", defer:2
 zplug "plugins/git", from:oh-my-zsh
 zplug "plugins/docker", from:oh-my-zsh
 zplug "plugins/fasd", from:oh-my-zsh
