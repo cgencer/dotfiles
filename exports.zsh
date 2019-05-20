@@ -15,3 +15,6 @@ export NVM_LAZY_LOAD=true
 # Captain settings
 export CAPTAIN_DEPTH=3
 export CAPTAIN_ROOT=~/Projects
+
+# Dock settings
+export DOCK_HOME=~/Projects

@@ -13,5 +13,5 @@ zplug "zsh-users/zsh-autosuggestions", defer:2
 zplug "plugins/git", from:oh-my-zsh
 zplug "plugins/docker", from:oh-my-zsh
 zplug "plugins/fasd", from:oh-my-zsh
-zplug "jenssegers/zsh", as:theme
+zplug "jenssegers/palenight.zsh-theme", as:theme
 zplug load
