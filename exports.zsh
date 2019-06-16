@@ -18,3 +18,4 @@ export CAPTAIN_ROOT=~/Projects
 
 # Dock settings
 export DOCK_HOME=~/Projects
+export DOCK_DEFAULT_ORGANISATION=teamleadercrm
