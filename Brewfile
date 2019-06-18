@@ -8,12 +8,6 @@ upgrade
 tap 'caskroom/cask'
 tap 'caskroom/fonts'
 
-# Install more recent versions of some OS X tools
-brew 'homebrew/dupes/nano'
-brew 'homebrew/dupes/grep'
-brew 'homebrew/dupes/screen'
-brew 'homebrew/dupes/less'
-
 # Install tools
 #brew 'dhcpdump'
 #brew 'ipcalc'
@@ -28,6 +22,9 @@ brew 'docker-clean'
 brew 'fasd'
 brew 'git'
 brew 'htop'
+brew 'nano'
+brew 'grep'
+brew 'screen'
 brew 'less'
 brew 'mackup'
 brew 'mas'
@@ -38,30 +35,34 @@ brew 'zplug'
 brew 'zsh'
 brew 'zsh-autosuggestions'
 brew 'zsh-completions'
+brew 'n'
 
 # Applications
 #cask 'macs-fan-control'
 cask 'alfred'
 cask 'bartender'
 cask 'cakebrew'
-cask 'cleanmymac'
+#cask 'cleanmymac'
 cask 'docker'
 cask 'dropbox'
 cask 'firefox'
 cask 'google-chrome'
 cask 'insomnia'
-cask 'istumbler'
+#cask 'istumbler'
 cask 'kitematic'
 cask 'little-snitch'
 cask 'phpstorm'
-cask 'robomongo'
+#cask 'robomongo'
 cask 'sequel-pro'
 cask 'sonos'
 cask 'spotify'
-cask 'sublime-text'
+#cask 'sublime-text'
 cask 'viscosity'
 cask 'vlc'
 cask 'whatsapp'
+cask 'zoomus'
+cask 'brave-browser'
+cask 'toggl'
 
 # Fonts
 cask 'font-inconsolata'
@@ -90,7 +91,7 @@ mas 409201541 # Pages
 mas 409183694 # Keynote
 mas 1107421413 # 1Blocker
 mas 1020812363 # Copyclip
-mas 981117463 # Chatty
+#mas 981117463 # Chatty
 mas 972028355 # Microsnitch
 mas 1333542190 # 1Password
 mas 585829637 # Todoist
