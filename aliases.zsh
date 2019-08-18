@@ -62,6 +62,7 @@ alias ruby="docker_run -v ~/.gem:/root/.gem ruby:slim ruby"
 alias gem="docker_run -v ~/.gem:/root/.gem ruby:slim gem"
 alias blackfire="docker_run -e BLACKFIRE_CLIENT_ID -e BLACKFIRE_CLIENT_TOKEN blackfire/blackfire blackfire"
 alias php-cs-fixer="docker_run ekreative/php-cs-fixer php-cs-fixer"
+alias docker-stop='docker stop $(docker ps -aq)'
 
 # Generate a random uuid
 alias uuid="uuidgen | tr '[:upper:]' '[:lower:]' | tr -d '\n' | pbcopy && pbpaste && echo"
@@ -122,5 +123,13 @@ timestamp() {
 		date +%s | pbcopy && pbpaste && echo
 	else
 		date -r $1
+	fi
+}
+
+please() {
+	if [ $# -eq 0 ]; then
+		sudo $(fc -ln -1)
+	else
+		sudo ${@}
 	fi
 }
