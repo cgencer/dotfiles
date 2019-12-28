@@ -21,6 +21,8 @@ alias d="docker"
 alias dc="docker-compose"
 alias c="composer"
 alias ping="prettyping --nolegend"
+alias drive="~/Library/Mobile\ Documents/com~apple~CloudDocs/"
+alias icloud="~/Library/Mobile\ Documents/com~apple~CloudDocs/"
 
 # PHP stuff
 alias ci="composer install --ignore-platform-reqs"
