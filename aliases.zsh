@@ -7,17 +7,13 @@ alias .....="cd ../../../.."
 
 # Shortcuts
 alias g="git"
-alias subl="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
-alias sublime="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
 alias storm="open -a /Applications/PhpStorm.app"
 alias code="/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code"
 alias finder="open ."
-alias diff="colordiff"
 alias hosts="code /etc/hosts"
 alias aliases="code ~/.dotfiles/aliases.zsh"
 alias exports="code ~/.dotfiles/exports.zsh"
 alias vim="code"
-alias cap="captain"
 alias tree="tree -C"
 alias airport="/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport"
 alias flushdns="dscacheutil -flushcache && echo \"DNS cache cleared\""
@@ -40,7 +36,6 @@ function docker_run() {
 		docker run -it --init --rm \
 			-v $(pwd):/directory \
 			-w /directory \
-			--network tlnetwork \
 			${@}
 	else
 		echo "Binding localhost:$PORT to container";
@@ -48,7 +43,6 @@ function docker_run() {
 			-v $(pwd):/directory \
 			-w /directory \
 			-p ${PORT}:${PORT} \
-			--network tlnetwork \
 			${@}
 	fi
 }
@@ -84,13 +78,6 @@ random() {
 # Get string length of first argument
 strlen() {
 	echo ${#1}
-}
-
-# Get daily commits
-daily() {
-	for D in ~/Projects/*/.git; do
-		git --git-dir=$D log --author "$(git config user.name)" --since="00:00" --pretty=tformat:" - %s" | cat
-	done
 }
 
 # Base64 decode strings

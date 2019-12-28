@@ -24,7 +24,7 @@ brew 'git'
 brew 'htop'
 brew 'nano'
 brew 'grep'
-brew 'screen'
+#brew 'screen'
 brew 'less'
 brew 'mackup'
 brew 'mas'
@@ -38,31 +38,28 @@ brew 'zsh-completions'
 brew 'n'
 
 # Applications
-#cask 'macs-fan-control'
 cask 'alfred'
 cask 'bartender'
-cask 'cakebrew'
-#cask 'cleanmymac'
+cask 'brave-browser'
+cask 'deckset'
 cask 'docker'
 cask 'dropbox'
-cask 'firefox'
-cask 'google-chrome'
 cask 'insomnia'
-#cask 'istumbler'
+cask 'istumbler'
 cask 'kitematic'
 cask 'little-snitch'
+cask 'ngrok'
 cask 'phpstorm'
 #cask 'robomongo'
 cask 'sequel-pro'
 cask 'sonos'
 cask 'spotify'
-#cask 'sublime-text'
-cask 'viscosity'
-cask 'vlc'
-cask 'whatsapp'
-cask 'zoomus'
-cask 'brave-browser'
 cask 'toggl'
+cask 'viscosity'
+cask 'visual-studio-code'
+#cask 'vlc'
+#cask 'whatsapp'
+#cask 'zoomus'
 
 # Fonts
 cask 'font-inconsolata'
@@ -82,21 +79,23 @@ cask 'font-nexa'
 cask 'font-montserrat'
 
 # App store
-#mas 412529613 # Cinch
-mas 425424353 # Unarchiver
-mas 948176063 # Boom
-mas 803453959 # Slack
-mas 409203825 # Numbers
-mas 409201541 # Pages
-mas 409183694 # Keynote
-mas 1107421413 # 1Blocker
-mas 1020812363 # Copyclip
-#mas 981117463 # Chatty
-mas 972028355 # Microsnitch
-mas 1333542190 # 1Password
-mas 585829637 # Todoist
-mas 441258766 # Magnet
-mas 1147396723 # Whatsapp
+
+mas 1462114288 # Grammarly for Safari (9.4)
+mas 1333542190 # 1Password 7 (7.3.2)
+mas 441258766 # Magnet (2.4.4)
+mas 409183694 # Keynote (9.2)
+mas 408981434 # iMovie (10.1.13)
+mas 1020812363 # CopyClip (3.4)
+mas 668208984 # GIPHY CAPTURE (4.1)
+mas 1107421413 # 1Blocker (1.4.8)
+mas 585829637 # Todoist (7.1.4)
+mas 409201541 # Pages (8.2)
+mas 803453959 # Slack (4.1.0)
+mas 1458969831 # JSONPeep (1.1)
+mas 1472777122 # Honey (11.6.4)
+mas 409203825 # Numbers (6.2)
+mas 948176063 # Boom 2 (1.6.8)
+mas 972028355 # Micro Snitch (1.3.1)
 
 # Remove outdated versions from the cellar
 cleanup
