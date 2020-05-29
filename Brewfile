@@ -36,30 +36,34 @@ brew 'zsh'
 brew 'zsh-autosuggestions'
 brew 'zsh-completions'
 brew 'n'
+brew 'gh'
 
 # Applications
 cask 'alfred'
 cask 'bartender'
+cask 'battle-net'
 cask 'brave-browser'
 cask 'deckset'
 cask 'docker'
 cask 'dropbox'
 cask 'insomnia'
-cask 'istumbler'
-cask 'kitematic'
+#cask 'istumbler'
+#cask 'kitematic'
 cask 'little-snitch'
+cask 'muzzle'
 cask 'ngrok'
-cask 'phpstorm'
+#cask 'phpstorm'
 #cask 'robomongo'
-cask 'sequel-pro'
+#cask 'sequel-pro'
 cask 'sonos'
 cask 'spotify'
+cask 'tableplus'
 cask 'toggl'
-cask 'viscosity'
+#cask 'viscosity'
 cask 'visual-studio-code'
 #cask 'vlc'
 #cask 'whatsapp'
-#cask 'zoomus'
+cask 'zoomus'
 
 # Fonts
 cask 'font-inconsolata'
@@ -77,6 +81,7 @@ cask 'font-comfortaa'
 cask 'font-hack'
 cask 'font-nexa'
 cask 'font-montserrat'
+cask 'font-inter'
 
 # App store
 
@@ -84,7 +89,7 @@ mas 1462114288 # Grammarly for Safari (9.4)
 mas 1333542190 # 1Password 7 (7.3.2)
 mas 441258766 # Magnet (2.4.4)
 mas 409183694 # Keynote (9.2)
-mas 408981434 # iMovie (10.1.13)
+#mas 408981434 # iMovie (10.1.13)
 mas 1020812363 # CopyClip (3.4)
 mas 668208984 # GIPHY CAPTURE (4.1)
 mas 1107421413 # 1Blocker (1.4.8)

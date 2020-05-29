@@ -23,6 +23,9 @@ alias c="composer"
 alias ping="prettyping --nolegend"
 alias drive="~/Library/Mobile\ Documents/com~apple~CloudDocs/"
 alias icloud="~/Library/Mobile\ Documents/com~apple~CloudDocs/"
+alias cask="brew cask"
+alias yeet="npm run test"
+alias prs="gh pr status"
 
 # PHP stuff
 alias ci="composer install --ignore-platform-reqs"
@@ -59,6 +62,7 @@ alias gem="docker_run -v ~/.gem:/root/.gem ruby:slim gem"
 alias blackfire="docker_run -e BLACKFIRE_CLIENT_ID -e BLACKFIRE_CLIENT_TOKEN blackfire/blackfire blackfire"
 alias php-cs-fixer="docker_run ekreative/php-cs-fixer php-cs-fixer"
 alias docker-stop='docker stop $(docker ps -aq)'
+alias mongo='docker_run mongo mongo'
 
 # Generate a random uuid
 alias uuid="uuidgen | tr '[:upper:]' '[:lower:]' | tr -d '\n' | pbcopy && pbpaste && echo"
@@ -96,7 +100,7 @@ transfer() {
 }
 
 # Get dns records for a host
-function dnsrecords() {
+function dns() {
 	dig +nocmd $1 A +multiline +noall +answer;
 	dig +nocmd $1 AAAA +multiline +noall +answer;
 	dig +nocmd $1 NS +multiline +noall +answer;
