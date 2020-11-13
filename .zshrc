@@ -1,6 +1,7 @@
 export PATH=$HOME/bin:/usr/local/bin:./bin:$PATH
 
 export ZSH=$HOME/.oh-my-zsh
+export ZSH_DISABLE_COMPFIX=true
 source $ZSH/oh-my-zsh.sh
 
 export ZPLUG_HOME=/usr/local/opt/zplug

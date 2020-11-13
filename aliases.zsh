@@ -31,7 +31,6 @@ alias prs="gh pr status"
 alias ci="composer install --ignore-platform-reqs"
 alias cu="composer update --ignore-platform-reqs"
 alias cr="composer require --ignore-platform-reqs"
-alias serve="PORT=3000 php -S 0.0.0.0:3000"
 alias art="php artisan"
 alias climb="composer outdated --outdated --direct"
 
@@ -53,16 +52,15 @@ function docker_run() {
 }
 
 # Docker aliases
-alias composer="docker_run -v ~/.composer:/root/.composer -v ~/.ssh:/root/.ssh jenssegers/php:cli composer"
-alias php="docker_run jenssegers/php:cli php"
-alias php5="docker_run php:5-alpine php"
-alias php70="docker_run php:7.0-alpine php"
+alias composer="docker_run -v ~/.composer:/root/.composer -v ~/.ssh:/root/.ssh composer"
+alias php="docker_run php:7-cli php"
+alias php5="docker_run php:5-cli php"
+alias php70="docker_run php:7.0-cli php"
 alias ruby="docker_run -v ~/.gem:/root/.gem ruby:slim ruby"
 alias gem="docker_run -v ~/.gem:/root/.gem ruby:slim gem"
 alias blackfire="docker_run -e BLACKFIRE_CLIENT_ID -e BLACKFIRE_CLIENT_TOKEN blackfire/blackfire blackfire"
 alias php-cs-fixer="docker_run ekreative/php-cs-fixer php-cs-fixer"
 alias docker-stop='docker stop $(docker ps -aq)'
-alias mongo='docker_run mongo mongo'
 
 # Generate a random uuid
 alias uuid="uuidgen | tr '[:upper:]' '[:lower:]' | tr -d '\n' | pbcopy && pbpaste && echo"
@@ -125,4 +123,25 @@ please() {
 	else
 		sudo ${@}
 	fi
+}
+
+urlencode() {
+    old_lc_collate=$LC_COLLATE
+    LC_COLLATE=C
+
+    local length="${#1}"
+    for (( i = 0; i < length; i++ )); do
+        local c="${1:i:1}"
+        case $c in
+            [a-zA-Z0-9.~_-]) printf "$c" ;;
+            *) printf '%%%02X' "'$c" ;;
+        esac
+    done
+
+    LC_COLLATE=$old_lc_collate
+}
+
+urldecode() {
+    local url_encoded="${1//+/ }"
+    printf '%b' "${url_encoded//%/\\x}"
 }
